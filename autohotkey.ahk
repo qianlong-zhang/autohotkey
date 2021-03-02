@@ -13,6 +13,12 @@
 ;Win + PauseBreak：打开系统属性对话框;
 ;Win + Q: 本地文件 / 网页等搜索;
 ;Win + U: 打开控制面板－轻松使用设置中心;
+;Win + Tab：新建电脑桌面
+;Win + I: 打开windows设置
+;Win + S: 打开windos搜索
+;Win + 数字键：打开任务栏上的第n个程序
+
+
 
 ;alt + z 打开zotero
 !z::Run D:\Program Files (x86)\Zotero\zotero.exe
@@ -39,10 +45,13 @@
 !s::Run D:\Program Files (x86)\Source Insight 4.0\sourceinsight4.exe
 
 ;alt + f 打开foxmail
-!f::Run D:\Program Files\Foxmail 7.2\Foxmail.exe
+!f::Run D:\Foxmail 7.2\Foxmail.exe
 
 ;alt + m 打开网易云音乐
 !m::Run D:\Program Files (x86)\Netease\CloudMusic\cloudmusic.exe
+
+;alt + p 打开pdf阅读器
+!p::Run D:\Program Files (x86)\Foxit Software\Foxit Reader\FoxitReader.exe
 
 ;alt + c 打开chrome，在本文后面定义
 ;!c::Run C:\Program Files\Google\Chrome\Application\chrome.exe
