@@ -24,34 +24,40 @@
 !z::Run D:\Program Files (x86)\Zotero\zotero.exe
 
 ;alt + n 打开notepad++
-!n::Run D:\Program Files\Notepad++\notepad++.exe
+!n::Run D:\Program Files (x86)\Notepad++\notepad++.exe
 
 ;alt + e 打开everything
 !e::Run D:\Program Files\Everything\Everything.exe
 
 ;alt + y 打开有道词典
-!y::Run D:\Users\qianl\AppData\Local\Youdao\Dict\YoudaoDict.exe
+!y::Run D:\Users\qianlnzhang\AppData\Local\Youdao\Dict\YoudaoDict.exe
 		
 ;alt + a 打开Autohotkey
-!a::Run D:\Program Files\Notepad++\notepad++.exe D:\autokey.ahk
+!a::Run D:\Program Files (x86)\Notepad++\notepad++.exe D:\autohotkey.ahk
 
-;alt + w 打开微信客户端
-!w::Run D:\Program Files (x86)\Tencent\WeChat\WeChat.exe
+;alt + w 打开微信客户端，通过微信自带快捷键实现
+;!w::Run "D:\Program Files (x86)\Tencent\WeChat\WeChat.exe"
+
+;alt + s 打开snipaste
+!s:: Run "D:\Program Files (x86)\Snipaste-2.7.1-Beta-x64\Snipaste.exe"
 
 ;alt + o 打开outlook
 !o::Run C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Outlook.lnk
 
-;alt + s 打开source insight
-!s::Run D:\Program Files (x86)\Source Insight 4.0\sourceinsight4.exe
+;alt + v 打开VScode
+!v::Run "D:\Users\qianlnzhang\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+
+;alt + q 打开企业微信
+!q:: Run "C:\Program Files (x86)\WXWork\WXWork.exe"
 
 ;alt + f 打开foxmail
-!f::Run D:\Foxmail 7.2\Foxmail.exe
+!f::Run D:\Program Files\Foxmail 7.2\Foxmail.exe
 
 ;alt + m 打开网易云音乐
 !m::Run D:\Program Files (x86)\Netease\CloudMusic\cloudmusic.exe
 
-;alt + p 打开pdf阅读器
-!p::Run D:\Program Files (x86)\Foxit Software\Foxit Reader\FoxitReader.exe
+;alt + p 打开pdf阅读器，与VSCode的快捷键冲突
+!p::Run D:\Program Files (x86)\Foxit PDF Reader\Foxit Reader\FoxitReader.exe
 
 ;alt + c 打开chrome，在本文后面定义
 ;!c::Run C:\Program Files\Google\Chrome\Application\chrome.exe
@@ -60,10 +66,16 @@
 #c::Run control
 
 ;alt + k 打开快捷方式文件夹
-!k::Run, "D:\ShortCut"
+!k::Run, D:\ShortCuts
 
 ;alt + d 打开D盘
 !d::Run, "D:\"
+
+;alt + g 打开gtkwave
+!g::Run, "D:\Software\gtkwave-3.3.100-bin-win64\gtkwave64\bin\gtkwave.exe"
+
+;alt + b 打开beyondCompare
+!b::Run, "D:\Program Files\Beyond Compare 4\BCompare.exe"
 
 ;=========================================================================
 ;Notes: #==win !==Alt ^==Ctrl  +==shift ::分隔 run AHK命令
@@ -170,6 +182,7 @@ return
 !space:: ;cosea典藏级原创代码之谷歌搜索终极版
 run https://www.google.com/search?q=%clipboard% ;用google搜索剪切板的内容
 clipboard1=%clipboard%&tbs=qdr:1,sbd:1
+return
 ;run https://www.google.com/search?q=%clipboard1% ;按时间排序
 ;run https://www.google.com/search?q=%clipboard%&tbs=qdr:m ;只显示最近一个月信息
 ;run https://www.google.com/search?q=%clipboard%&tbs=qdr:y ;只显示最近一年信息
@@ -228,11 +241,13 @@ clipboard1=%clipboard%&tbs=qdr:1,sbd:1
 
 ^delete::FileRecycleEmpty ;ctrl+del，清空回收站
 
+
 ;F1:: ;窗口切换 ALT+TAB
 ;send,!{tab}
 ;return
 
-F6:: ;打开计算器
+;打开计算器
+F6::
 IfWinNotExist ahk_class Calculator
 {
   Run calc
